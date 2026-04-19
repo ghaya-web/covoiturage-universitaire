@@ -1,0 +1,147 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam linetype ortho
+top to bottom direction
+
+class Utilisateur {
+  - id : int
+  - nom : String
+  - email : String
+  - motDePasse : String
+  + Utilisateur()
+  + Utilisateur(id : int, nom : String, email : String, motDePasse : String)
+  + seConnecter() : boolean
+  + seDeconnecter() : void
+  + getters/setters
+}
+
+class Passager {
+  - numeroEtudiant : String
+  + Passager()
+  + Passager(numeroEtudiant : String)
+  + reserverTrajet(trajet : Trajet) : Reservation
+  + annulerReservation(reservation : Reservation) : void
+  + consulterReservations() : void
+  + getters/setters
+}
+
+class Conducteur {
+  - telephone : String
+  - noteMoyenne : double
+  + Conducteur()
+  + Conducteur(telephone : String, noteMoyenne : double)
+  + proposerTrajet(trajet : Trajet) : void
+  + gererProfil() : void
+  + consulterReservationsRecues() : void
+  + getters/setters
+}
+
+class Administrateur {
+  + Administrateur()
+  + gererUtilisateurs() : void
+  + gererTrajets() : void
+  + consulterTableauDeBord() : void
+}
+
+class Authentification {
+  + Authentification()
+  + inscrireUtilisateur(nom : String, email : String, motDePasse : String) : Utilisateur
+  + authentifier(email : String, motDePasse : String) : boolean
+}
+
+class Recherche {
+  - depart : String
+  - destination : String
+  - dateRecherche : String
+  + Recherche()
+  + Recherche(depart : String, destination : String, dateRecherche : String)
+  + rechercherTrajet() : void
+  + afficherResultats() : void
+  + getters/setters
+}
+
+class Trajet {
+  - idTrajet : int
+  - depart : String
+  - destination : String
+  - date : String
+  - heure : String
+  - prix : double
+  - placesDisponibles : int
+  + Trajet()
+  + Trajet(idTrajet : int, depart : String, destination : String, date : String, heure : String, prix : double, placesDisponibles : int)
+  + afficherDetails() : void
+  + diminuerPlaces() : void
+  + augmenterPlaces() : void
+  + getters/setters
+}
+
+class Reservation {
+  - idReservation : int
+  - dateReservation : String
+  - statut : String
+  + Reservation()
+  + Reservation(idReservation : int, dateReservation : String, statut : String)
+  + confirmerReservation() : void
+  + annulerReservation() : void
+  + afficherDetails() : void
+  + getters/setters
+}
+
+class TableauBordAdmin {
+  - nombreUtilisateurs : int
+  - nombreTrajets : int
+  - nombreReservations : int
+  + TableauBordAdmin()
+  + TableauBordAdmin(nombreUtilisateurs : int, nombreTrajets : int, nombreReservations : int)
+  + afficherStatistiques() : void
+  + getters/setters
+}
+
+Utilisateur <|-- Passager : hérite
+Utilisateur <|-- Conducteur : hérite
+Utilisateur <|-- Administrateur : hérite
+
+Passager "1" -- "0..*" Reservation : effectue
+Reservation "1" -- "1" Trajet : concerne
+Conducteur "1" -- "0..*" Trajet : propose
+Recherche ..> Trajet : utilise
+Authentification ..> Utilisateur : gère
+Administrateur o-- "0..*" Utilisateur : gère
+Administrateur o-- "0..*" Trajet : gère
+Administrateur --> TableauBordAdmin : consulte
+
+note right of Authentification
+Elaa
+end note
+
+note right of Passager
+Ghaya
+end note
+
+note right of Reservation
+Ghaya
+end note
+
+note right of Recherche
+Yasmin
+end note
+
+note right of Conducteur
+Maissa
+end note
+
+note right of Trajet
+Maissa
+end note
+
+note right of Administrateur
+Ines
+end note
+
+note right of TableauBordAdmin
+Ines
+end note
+
+@enduml
