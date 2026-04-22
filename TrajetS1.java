@@ -1,0 +1,29 @@
+public class TrajetS1 {
+
+    private String depart;
+    private String destination;
+    private String dateRecherche;
+    private String heure; 
+    private double prix; 
+    private int nombrePlacesDisponibles; 
+
+    public TrajetS1(String depart, String destination, String dateRecherche,
+                  String heure, double prix, int nombrePlacesDisponibles) {
+        this.depart = depart;
+        this.destination = destination;
+        this.dateRecherche = dateRecherche;
+        this.heure = heure;
+        this.prix = prix;
+        this.nombrePlacesDisponibles = nombrePlacesDisponibles;
+    }
+
+    public String getDepart() { return depart; }
+    public String getDestination() { return destination; }
+    public String getDateRecherche() { return dateRecherche; }
+
+    // ⚠️ affichage simplifié
+    @Override
+    public String toString() {
+        return depart + " -> " + destination + " | Date: " + dateRecherche;
+    }
+}
