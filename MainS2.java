@@ -1,12 +1,12 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Main {
+public class MainS2 {
 
     public static void main(String[] args) {
 
         // 👨‍✈️ Conducteur
-        Conducteur conducteur = new Conducteur("98765432", 4.5);
+        ConducteurS2 conducteur = new ConducteurS2("98765432", 4.5);
         conducteur.setNom("Ali");
         conducteur.setEmail("ali@gmail.com");
 
@@ -31,12 +31,12 @@ public class Main {
         // ✔ User Story 2
         conducteur.consulterMesTrajets();
 
-       System.out.println("\nTest diminution des places :");
-       t1.diminuerPlaces();
-       t1.afficherDetails();
+        System.out.println("\nTest diminution des places :");
+        t1.diminuerPlaces();
+        t1.afficherDetails();
 
-       System.out.println("\nTest augmentation des places :");
-       t1.augmenterPlaces();
-       t1.afficherDetails(); 
+        System.out.println("\nTest augmentation des places :");
+        t1.augmenterPlaces();
+        t1.afficherDetails();
     }
 }
