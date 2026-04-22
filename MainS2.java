@@ -11,12 +11,12 @@ public class MainS2 {
         conducteur.setEmail("ali@gmail.com");
 
         // 🚗 Trajets
-        Trajet t1 = new Trajet(1, "Tunis", "Sousse",
+        TrajetS2 t1 = new TrajetS2(1, "Tunis", "Sousse",
                 LocalDate.of(2026, 4, 22),
                 LocalTime.of(8, 30),
                 12.5, 3);
 
-        Trajet t2 = new Trajet(2, "Tunis", "Sfax",
+        TrajetS2 t2 = new TrajetS2(2, "Tunis", "Sfax",
                 LocalDate.of(2026, 4, 23),
                 LocalTime.of(14, 0),
                 20.0, 4);
@@ -31,6 +31,7 @@ public class MainS2 {
         // ✔ User Story 2
         conducteur.consulterMesTrajets();
 
+        // 🔽 Tests places
         System.out.println("\nTest diminution des places :");
         t1.diminuerPlaces();
         t1.afficherDetails();
