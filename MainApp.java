@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+// Application simple pour authentification
 public class MainApp {
 
     public static void main(String[] args) {
@@ -18,7 +18,7 @@ public class MainApp {
 
             if (choix == 1) {
 
-                System.out.print("Nom: ");
+                System.out.print(" nom: ");
                 String nom = sc.nextLine();
 
                 System.out.print("Email: ");

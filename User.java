@@ -1,13 +1,13 @@
 public class User {
-
+// version simple
     int id;
     String nom;
     String email;
     String motDePasse;
 
-    public User(int id, String nom, String email, String motDePasse) {
-        this.id = id;
-        this.nom = nom;
+    public User(int Id, String Nom, String email, String motDePasse) {
+        this.id = Id;
+        this.nom = Nom;
         this.email = email;
         this.motDePasse = motDePasse;
     }

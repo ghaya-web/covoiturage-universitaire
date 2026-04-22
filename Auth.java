@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+// Sprint 1 : version simple
 public class Auth {
 
     ArrayList<User> users = new ArrayList<>();
@@ -23,6 +23,6 @@ public class Auth {
             }
         }
 
-        System.out.println("Email ou mot de passe incorrect");
+        System.out.println("email ou mot de passe incorrect");
     }
 }
