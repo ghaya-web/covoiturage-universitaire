@@ -10,7 +10,7 @@ public class ConducteurS2 {
     private String telephone;
     private double noteMoyenne;
 
-    private List<Trajet> trajets;
+    private List<TrajetS2> trajets;
 
     public ConducteurS2(String telephone, double noteMoyenne) {
         this.telephone = telephone;
@@ -38,21 +38,21 @@ public class ConducteurS2 {
     public void setNoteMoyenne(double noteMoyenne) { this.noteMoyenne = noteMoyenne; }
 
     // User Story 1
-    public void proposerTrajet(Trajet trajet) {
+    public void proposerTrajet(TrajetS2 trajet) {
         trajets.add(trajet);
-        System.out.println("Trajet ajouté avec succès !");
+        System.out.println(" Trajet ajouté avec succès !");
     }
 
     // User Story 2
     public void consulterMesTrajets() {
-        System.out.println("\nMes trajets :");
-        for (Trajet t : trajets) {
+        System.out.println("\n Mes trajets :");
+        for (TrajetS2 t : trajets) {
             t.afficherDetails();
         }
     }
 
     public void gererProfil() {
-        System.out.println("\nProfil conducteur : " + nom + " | " + email);
+        System.out.println("\n Profil conducteur : " + nom + " | " + email);
     }
 
     public void consulterReservationsRecues() {
