@@ -10,7 +10,7 @@ Prototype navigable : [Voir le prototype Figma]
 ### Fonctionnalité : Réservation
 
 **Écran 1 — Détails du trajet**  
-![Écran 1](docs/captures/maquettes/reservation-ecran1.png)
+![Écran 1](docs/captures/maquettes/recherche-ecran1.png)
 
 **Écran 2 — Confirmation de réservation**  
-![Écran 2](docs/captures/maquettes/reservation-ecran2.png)
+![Écran 2](docs/captures/maquettes/recherche-ecran2.png)
