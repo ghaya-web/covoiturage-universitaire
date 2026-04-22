@@ -1,14 +1,14 @@
-public class Utilisateur {
+public class utilisateur {
 
     private int id;
     private String nom;
     private String email;
     private String motDePasse;   
 
-    public Utilisateur() {
+    public utilisateur() {
     }
 
-    public Utilisateur(int id, String nom, String email, String motDePasse) {
+    public utilisateur(int id, String nom, String email, String motDePasse) {
         this.id = id;
         this.nom = nom;
         this.email = email;
@@ -54,4 +54,4 @@ public class Utilisateur {
     public void seDeconnecter() {
         System.out.println(nom + " est déconnecté.");
     }
-}
+}  

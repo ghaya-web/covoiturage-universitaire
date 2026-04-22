@@ -1,17 +1,56 @@
-public class Main {
+import java.util.Scanner;
+
+public class main {
 
     public static void main(String[] args) {
 
-        System.out.println("=== Covoiturage — Sprint 1 ===");
-
         Authentification auth = new Authentification();
+        Scanner sc = new Scanner(System.in);
 
-        // Test inscription
-        auth.inscrireUtilisateur("Ahmed", "ahmed@mail.com", "1234");
-        auth.inscrireUtilisateur("Fatma", "fatma@mail.com", "abcd");
+        while (true) {
 
-        // Test connexion
-        auth.authentifier("ahmed@mail.com", "1234"); // succès
-        auth.authentifier("ahmed@mail.com", "0000"); // erreur
+            System.out.println("\n=== MENU ===");
+            System.out.println("1. Inscription");
+            System.out.println("2. Connexion");
+            System.out.println("3. Quitter");
+
+            System.out.print("Choix : ");
+            int choix = sc.nextInt();
+            sc.nextLine();
+
+            if (choix == 1) {
+
+                System.out.print("Nom : ");
+                String nom = sc.nextLine();
+
+                System.out.print("Email : ");
+                String email = sc.nextLine();
+
+                System.out.print("Mot de passe : ");
+                String mdp = sc.nextLine();
+
+                auth.inscrireUtilisateur(nom, email, mdp);
+
+            }
+
+            else if (choix == 2) {
+
+                System.out.print("Email : ");
+                String email = sc.nextLine();
+
+                System.out.print("Mot de passe : ");
+                String mdp = sc.nextLine();
+
+                auth.authentifier(email, mdp);
+
+            }
+
+            else if (choix == 3) {
+                System.out.println("Au revoir");
+                break;
+            }
+        }
+
+        sc.close();
     }
 }
