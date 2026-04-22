@@ -4,28 +4,27 @@ public class TableauDeBordAdmin {
     private int nombreTrajets;
     private int nombreReservations;
 
-    // Constructeur
-    public TableauDeBordAdmin(int nombreUtilisateurs, int nombreTrajets, int nombreReservations) {
+    public TableauDeBordAdmin() {}
+
+    public int getNombreUtilisateurs() { return nombreUtilisateurs; }
+    public void setNombreUtilisateurs(int nombreUtilisateurs) {
         this.nombreUtilisateurs = nombreUtilisateurs;
+    }
+
+    public int getNombreTrajets() { return nombreTrajets; }
+    public void setNombreTrajets(int nombreTrajets) {
         this.nombreTrajets = nombreTrajets;
+    }
+
+    public int getNombreReservations() { return nombreReservations; }
+    public void setNombreReservations(int nombreReservations) {
         this.nombreReservations = nombreReservations;
     }
 
-    // Getters & Setters
-    public int getNombreUtilisateurs() { return nombreUtilisateurs; }
-    public void setNombreUtilisateurs(int nombreUtilisateurs) { this.nombreUtilisateurs = nombreUtilisateurs; }
-
-    public int getNombreTrajets() { return nombreTrajets; }
-    public void setNombreTrajets(int nombreTrajets) { this.nombreTrajets = nombreTrajets; }
-
-    public int getNombreReservations() { return nombreReservations; }
-    public void setNombreReservations(int nombreReservations) { this.nombreReservations = nombreReservations; }
-
-    // Méthode principale
     public void afficherStatistiques() {
-        System.out.println("=== Tableau de Bord Admin ===");
-        System.out.println("Nombre d'utilisateurs : " + nombreUtilisateurs);
-        System.out.println("Nombre de trajets : " + nombreTrajets);
-        System.out.println("Nombre de réservations : " + nombreReservations);
+        System.out.println("=== TABLEAU DE BORD ADMIN ===");
+        System.out.println("Nombre utilisateurs : " + nombreUtilisateurs);
+        System.out.println("Nombre trajets : " + nombreTrajets);
+        System.out.println("Nombre reservations : " + nombreReservations);
     }
 }
