@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Conducteur {
+public class ConducteurS2 {
 
     private int id;
     private String nom;
@@ -12,7 +12,7 @@ public class Conducteur {
 
     private List<Trajet> trajets;
 
-    public Conducteur(String telephone, double noteMoyenne) {
+    public ConducteurS2(String telephone, double noteMoyenne) {
         this.telephone = telephone;
         this.noteMoyenne = noteMoyenne;
         this.trajets = new ArrayList<>();
@@ -40,22 +40,22 @@ public class Conducteur {
     // User Story 1
     public void proposerTrajet(Trajet trajet) {
         trajets.add(trajet);
-        System.out.println(" Trajet ajouté avec succès !");
+        System.out.println("Trajet ajouté avec succès !");
     }
 
     // User Story 2
     public void consulterMesTrajets() {
-        System.out.println("\n Mes trajets :");
+        System.out.println("\nMes trajets :");
         for (Trajet t : trajets) {
             t.afficherDetails();
         }
     }
 
     public void gererProfil() {
-        System.out.println("\n Profil conducteur : " + nom + " | " + email);
+        System.out.println("\nProfil conducteur : " + nom + " | " + email);
     }
 
-    public void consulterReservationsReçues() {
+    public void consulterReservationsRecues() {
         System.out.println("Fonction non implémentée (Sprint 2)");
     }
 }
