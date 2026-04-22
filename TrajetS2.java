@@ -1,7 +1,7 @@
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Trajet {
+public class TrajetS2 {
 
     private int idTrajet;
     private String depart;
@@ -11,9 +11,9 @@ public class Trajet {
     private double prix;
     private int placesDisponibles;
 
-    public Trajet(int idTrajet, String depart, String destination,
-                  LocalDate date, LocalTime heure,
-                  double prix, int placesDisponibles) {
+    public TrajetS2(int idTrajet, String depart, String destination,
+                    LocalDate date, LocalTime heure,
+                    double prix, int placesDisponibles) {
         this.idTrajet = idTrajet;
         this.depart = depart;
         this.destination = destination;
