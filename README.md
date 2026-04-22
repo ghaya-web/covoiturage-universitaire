@@ -5,9 +5,9 @@ Plateforme de covoiturage universitaire développée en Java dans le cadre du mo
 ## Maquettes Figma
 
 Prototype navigable : [Voir le prototype Figma]
-( https://www.figma.com/make/ObkTanuAsNg2885mhju5sL/Covoiturage-universitaire-mobile?t=XaH26pE0HlM21Lg1-1 )
+( https://www.figma.com/make/6YDYI0QkPMFsQ269WHTwFu/Covoiturage-mobile-prototype?t=diOvvSsZtJfqeOfI-6 )
 
-### Fonctionnalité : Réservation
+### Fonctionnalité : Recherche
 
 **Écran 1 — Détails du trajet**  
 ![Écran 1](docs/captures/maquettes/recherche-ecran1.png)
