@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        ConducteurS2 c = new ConducteurS2(); // 🔥 بدلنا الاسم
+        ConducteurS2 c = new ConducteurS2(); 
 
         // création profil
         System.out.println("=== CREATION PROFIL ===");
@@ -72,7 +72,7 @@ public class Main {
                     int places = sc.nextInt();
                     sc.nextLine();
 
-                    TrajetS2 t = new TrajetS2( // 🔥 بدلنا الاسم
+                    TrajetS2 t = new TrajetS2( 
                             id,
                             dep,
                             dest,
