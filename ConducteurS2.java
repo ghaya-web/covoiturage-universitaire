@@ -1,61 +1,70 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConducteurS2 {
+public class ConducteurS2{
 
-    private int id;
     private String nom;
     private String email;
-    private String motDePasse;
     private String telephone;
-    private double noteMoyenne;
 
-    private List<TrajetS2> trajets;
+    private List<Trajet> trajets = new ArrayList<>();
 
-    public ConducteurS2(String telephone, double noteMoyenne) {
+    // créer profil
+    public void creerProfil(String nom, String email, String telephone) {
+        this.nom = nom;
+        this.email = email;
         this.telephone = telephone;
-        this.noteMoyenne = noteMoyenne;
-        this.trajets = new ArrayList<>();
     }
 
-    // Getters & Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public String getNom() { return nom; }
-    public void setNom(String nom) { this.nom = nom; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public String getMotDePasse() { return motDePasse; }
-    public void setMotDePasse(String motDePasse) { this.motDePasse = motDePasse; }
-
-    public String getTelephone() { return telephone; }
-    public void setTelephone(String telephone) { this.telephone = telephone; }
-
-    public double getNoteMoyenne() { return noteMoyenne; }
-    public void setNoteMoyenne(double noteMoyenne) { this.noteMoyenne = noteMoyenne; }
-
-    // User Story 1
-    public void proposerTrajet(TrajetS2 trajet) {
-        trajets.add(trajet);
-        System.out.println(" Trajet ajouté avec succès !");
+    public void modifierProfil(String nom, String email) {
+        this.nom = nom;
+        this.email = email;
+        System.out.println("Profil modifié !");
     }
 
-    // User Story 2
-    public void consulterMesTrajets() {
-        System.out.println("\n Mes trajets :");
-        for (TrajetS2 t : trajets) {
+    public void afficherProfil() {
+        System.out.println("\nProfil:");
+        System.out.println("Nom : " + nom);
+        System.out.println("Email : " + email);
+        System.out.println("Téléphone : " + telephone);
+    }
+
+    // ajouter trajet
+    public void ajouterTrajet(Trajet t) {
+        trajets.add(t);
+        System.out.println("Trajet ajouté !");
+    }
+
+    // afficher trajets
+    public void afficherTrajets() {
+        System.out.println("\nMes trajets:");
+        if (trajets.isEmpty()) {
+            System.out.println("Aucun trajet");
+            return;
+        }
+        for (Trajet t : trajets) {
             t.afficherDetails();
         }
     }
 
-    public void gererProfil() {
-        System.out.println("\n Profil conducteur : " + nom + " | " + email);
+    // supprimer trajet
+    public void supprimerTrajet(int id) {
+        boolean removed = trajets.removeIf(t -> t.getIdTrajet() == id);
+        if (removed)
+            System.out.println("Trajet supprimé !");
+        else
+            System.out.println("Trajet introuvable");
     }
 
-    public void consulterReservationsRecues() {
-        System.out.println("Fonction non implémentée (Sprint 2)");
+    // modifier trajet
+    public void modifierTrajet(int id, String dep, String dest, double prix, int places) {
+        for (Trajet t : trajets) {
+            if (t.getIdTrajet() == id) {
+                t.modifier(dep, dest, prix, places);
+                System.out.println("✔ Trajet modifié !");
+                return;
+            }
+        }
+        System.out.println("Trajet introuvable");
     }
 }
