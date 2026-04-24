@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class ConducteurS2{
+public class ConducteurS2 {
 
     private String nom;
     private String email;
