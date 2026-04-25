@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class Main {
+public class MainS2 {
 
     public static void main(String[] args) {
 
