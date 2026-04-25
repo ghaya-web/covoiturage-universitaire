@@ -7,9 +7,8 @@ public class ConducteurS2 {
     private String email;
     private String telephone;
 
-    private List<Trajet> trajets = new ArrayList<>();
+    private List<TrajetS2> trajets = new ArrayList<>();
 
-    // créer profil
     public void creerProfil(String nom, String email, String telephone) {
         this.nom = nom;
         this.email = email;
@@ -29,42 +28,43 @@ public class ConducteurS2 {
         System.out.println("Téléphone : " + telephone);
     }
 
-    // ajouter trajet
-    public void ajouterTrajet(Trajet t) {
+    public void ajouterTrajet(TrajetS2 t) {
         trajets.add(t);
         System.out.println("Trajet ajouté !");
     }
 
-    // afficher trajets
     public void afficherTrajets() {
         System.out.println("\nMes trajets:");
         if (trajets.isEmpty()) {
             System.out.println("Aucun trajet");
             return;
         }
-        for (Trajet t : trajets) {
+        for (TrajetS2 t : trajets) {
             t.afficherDetails();
         }
     }
 
-    // supprimer trajet
-    public void supprimerTrajet(int id) {
-        boolean removed = trajets.removeIf(t -> t.getIdTrajet() == id);
-        if (removed)
-            System.out.println("Trajet supprimé !");
-        else
-            System.out.println("Trajet introuvable");
-    }
+    
 
-    // modifier trajet
-    public void modifierTrajet(int id, String dep, String dest, double prix, int places) {
-        for (Trajet t : trajets) {
+    public void modifierTrajet(int id, String d, String dest, double p, int pl) {
+        for (TrajetS2 t : trajets) {
             if (t.getIdTrajet() == id) {
-                t.modifier(dep, dest, prix, places);
-                System.out.println("✔ Trajet modifié !");
+                t.modifier(d, dest, p, pl);
+                System.out.println("Trajet modifié !");
                 return;
             }
         }
-        System.out.println("Trajet introuvable");
+        System.out.println("Trajet introuvable !");
+    }
+
+    public void supprimerTrajet(int id) {
+        for (TrajetS2 t : trajets) {
+            if (t.getIdTrajet() == id) {
+                trajets.remove(t);
+                System.out.println("Trajet supprimé !");
+                return;
+            }
+        }
+        System.out.println("Trajet introuvable !");
     }
 }
